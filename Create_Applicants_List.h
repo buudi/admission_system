@@ -11,7 +11,7 @@
 List* create_applicants_list(){
     Node* applications[APPLICATIONS_SIZE] = {
             new Node("Abdullah Yaser", 20, 3.7, "Computer Science", "Information Technology"),
-            new Node("Ihab mandi", 65, 1.7, "Information technology", "Business studies"), 
+            new Node("Ihab mandi", 65, 1.7, "Information Technology", "Business Studies"), 
             new Node("Ahmed shawarma", 21, 3.5, "Electrical Engineering", "Computer Science"), 
             new Node("Yamete Kudasai", 18, 2.2, "Psychology", "Business Studies")
         };

@@ -49,12 +49,9 @@ void List::displayList(){
         Node* current = head;
         int num = 0;
         while(current != nullptr){
-            cout << current->fullName << endl;
-            cout << "accepted? : " << current->accepted << endl << endl; 
+            cout << ++num << ". " << current->fullName << endl;
             current=current->next;
-            num++;
         }
-        cout << "\nThere are: " << num << " nodes in the list \n";
     }
 }
 

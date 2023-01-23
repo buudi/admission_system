@@ -24,6 +24,7 @@ int main(){
     char userInput;
 	int userChoice;
 	string studentName;
+
 	
 	cout << "UTM STUDENT RECRUITMENT & ADMISSION DIVISION" << endl;
 	cout << "(SRAD)" << endl;
@@ -84,7 +85,7 @@ int main(){
 			case 4:
 				//work in progress
 				cout << " " << endl;
-				cout << ">> There are "; //<< noStudent << " accepted students." << endl;
+				// cout << ">> There are "; << noStudent << " accepted students." << endl;
 				cout << " " << endl;
 				//there should be a loop here that will display a list of accepted students.
 				
