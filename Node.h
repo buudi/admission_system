@@ -6,7 +6,7 @@ using namespace std;
 
 class Node{ 
     public:
-        string fullname;
+        string fullName;
         int age;
         float cgpa;
         string choice1;
@@ -22,12 +22,16 @@ class Node{
             this->accepted = true;
         }
 
+        void setAge(int _age){
+            this->age = _age;
+        }
+
         Node(){
             next = nullptr;
         }
 
-        Node(string _fullname, int _age, float _cgpa, string _choice1, string _choice2){
-            this->fullname = _fullname;
+        Node(string _fullName, int _age, float _cgpa, string _choice1, string _choice2){
+            this->fullName = _fullName;
             this->age = age;
             this->cgpa = _cgpa;
             this->choice1 = _choice1;

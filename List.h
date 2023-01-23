@@ -3,6 +3,8 @@
 #ifndef LIST_H
 #define LIST_H
 
+#include <string>
+
 class List{
     private:
         Node* head;
@@ -16,6 +18,7 @@ class List{
         Node* returnHead() { return head; }
         Node* returnTail(){return tail;}
         Node* return_node_at(int);
+        Node* update_node(string);
         void deleteHead();
         void deleteTail();
 };

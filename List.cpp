@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 #include "List.h"
 #include "Node.h"
@@ -6,7 +7,7 @@
 void List::insertHead(Node* item){
 
     Node* new_node = new Node(
-        item->fullname,
+        item->fullName,
         item->age,
         item->cgpa,
         item->choice1,
@@ -24,7 +25,7 @@ void List::insertHead(Node* item){
 
 void List::insertTail(Node* item){
     Node* new_node = new Node(
-        item->fullname,
+        item->fullName,
         item->age,
         item->cgpa,
         item->choice1,
@@ -48,7 +49,7 @@ void List::displayList(){
         Node* current = head;
         int num = 0;
         while(current != nullptr){
-            cout << current->fullname << endl;
+            cout << current->fullName << endl;
             cout << "accepted? : " << current->accepted << endl << endl; 
             current=current->next;
             num++;
@@ -67,6 +68,22 @@ Node* List::return_node_at(int position){
         return current;
     }
     return head;
+}
+
+Node* List::update_node(string _fullName){
+    Node* current = head;
+    while(current->fullName != _fullName)
+        current = current->next;
+    // if(current == nullptr){
+    //     cout << "\nNode Not Found (at update_node(string))\n";
+    //     return ;
+    // }
+
+    // } else {
+    //     cout << "\nSome error happened at update_node(string)\n";
+    //     return ;
+    // }
+    return current;
 }
 
 void List::deleteHead(){

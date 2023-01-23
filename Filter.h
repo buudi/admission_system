@@ -8,13 +8,28 @@
 #include "List.h"
 
 #define COURSES_SIZE 5
-
 struct Course{
     string courseName;
     float minimum_cgpa;
 } course[COURSES_SIZE];
 
-void filterSingle(Course course[], Node* applicant){
+void filter(Course course[], Node* applicant){
+
+    course[0].courseName = "Computer Science";
+    course[0].minimum_cgpa = 3.2; 
+    
+    course[1].courseName = "Electrical Engineering";
+    course[1].minimum_cgpa = 3.5; 
+    
+    course[2].courseName = "Psychology";
+    course[2].minimum_cgpa = 3.0;
+    
+    course[3].courseName = "Information technology";
+    course[3].minimum_cgpa = 2.5; 
+    
+    course[4].courseName = "Business Studies";
+    course[4].minimum_cgpa = 2.0; 
+
     string _choice1 = applicant->choice1;
     string _choice2 = applicant->choice2;
     int allocatedChoice = 0;

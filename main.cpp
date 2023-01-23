@@ -1,53 +1,114 @@
 #include <iostream>
+#include <cstdlib>
 #include <string>
 
 #include "Node.h"
 #include "List.h"
 #include "Filter.h"
+#include "Task1.h"
+#include "Create_Applicants_List.h"
+#include "ApplicantsList.h"
 
 using namespace std;
 
 #define APPLICATIONS_SIZE 4
 #define COURSES_SIZE 5
 
-int main(){
+List* applicantsList;
 
-    course[0].courseName = "Computer Science";
-    course[0].minimum_cgpa = 3.2; 
-    
-    course[1].courseName = "Electrical Engineering";
-    course[1].minimum_cgpa = 3.5; 
-    
-    course[2].courseName = "Psychology";
-    course[2].minimum_cgpa = 3.0;
-    
-    course[3].courseName = "Information technology";
-    course[3].minimum_cgpa = 2.5; 
-    
-    course[4].courseName = "Business Studies";
-    course[4].minimum_cgpa = 2.0; 
+int main(){ 
 
-    Node* applications[APPLICATIONS_SIZE] = {
-        new Node("Abdullah Yaser", 20, 3.7, "Computer Science", "Information Technology"),
-        new Node("Ihab mandi", 65, 1.7, "Information technology", "Business studies"), 
-        new Node("Ahmed shawarma", 21, 3.5, "Electrical Engineering", "Computer Science"), 
-        new Node("Yamete Kudasai", 18, 2.2, "Psychology", "Business Studies")
-    };
+    // create the linked list:
+    applicantsList = create_applicants_list();
 
-
-    List applicantsList;
-
-    for (int i = 0; i < APPLICATIONS_SIZE; i++)
-        applicantsList.insertTail(applications[i]);
-
-    for (int i = 0; i < APPLICATIONS_SIZE; i++){
-        cout << "applicant name: " << applications[i]->fullname;
-        filterSingle(course, applicantsList.return_node_at(i));
-        cout << endl;
+    char userInput;
+	int userChoice;
+	string studentName;
+	
+	cout << "UTM STUDENT RECRUITMENT & ADMISSION DIVISION" << endl;
+	cout << "(SRAD)" << endl;
+	
+    while(true){
+        cout << ">> Are you a student (S) or an adminstrator (A) ?" << endl;
+        cout << "> ";
+        cin >> userInput;
+        if(userInput=='A' || userInput=='a')
+            break;
     }
+	
+	if (userInput == 'A' || userInput == 'a') {
+		do {
+            system("CLS");
+            cout << "UTM STUDENT RECRUITMENT & ADMISSION DIVISION" << endl;
+            cout << "(SRAD)" << endl;
+			cout << " " << endl;
+		    cout << ">> Please select a task by typing a number" << endl;
+		    cout << ">> from 1-5" << endl;
+		
+		    cout << ">> 1. Update student info" << endl;
+		    cout << ">> 2. Filter student info (GPA)" << endl;
+		    cout << ">> 3. Search student info" << endl;
+		    cout << ">> 4. Display accepted students" << endl;
+		    cout << ">> 5. Generate matric number" << endl;
+            cout << ">> 6. Exit program" << endl;
+		    cout << " " << endl;
+		
+		    cout << "> ";
+		    cin >> userChoice;
+		    
+		    switch (userChoice) {
+			case 1:
+				cout << " " << endl;
+                task1();
+				break;
+				
+			case 2:
+				cout << " " << endl;
+				cout << ">> This is task 2!" << endl;
+				break;
+				
+			case 3:
+				cout << " " << endl;
+				cout << ">> Enter the student's full name:- " << endl;
+					cout << "> ";
+				cin >> studentName;
+				
+				//code for the task (linked list) should start here.
+				//this is just a filler, it isn't the actual code.
+				cout << " " << endl;
+				cout << "sike, you get nothin >:-]" << endl;
+				//note: try to look for "main menu" references.
+				//for the "yes or no" options.
+				break;
+				
+			case 4:
+				//work in progress
+				cout << " " << endl;
+				cout << ">> There are "; //<< noStudent << " accepted students." << endl;
+				cout << " " << endl;
+				//there should be a loop here that will display a list of accepted students.
+				
+				//note: try to look for "main menu" references.
+				//for the "yes or no" options.
+				break;
+				
+			case 5:
+				cout << " " << endl;
+				cout << ">> This is task 5!" << endl;
+				break;
+			
+            case 6:
+                cout << " " << endl;
+                return 0;
 
-    cout << "\n\n\nooopps check this too!\n";
-    applicantsList.displayList();
+			default:
+				cout << " " << endl;
+				cout << ">> This number is not a part of the task selection." << endl;
+		    }
+		}
+		while (true);
+    }
+    
 
     cout << "\n\npress Enter to continue ...";
     cin.ignore();
