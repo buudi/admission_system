@@ -58,17 +58,17 @@ void filter(Course course[], Node* applicant){
         }
     }
     
-    if (allocatedChoice == 0){
-        cout << "\n We regret to inform you that your application failed, reason being your cgpa doesn't satisfy the minimum required for your choices. code: " << allocatedChoice << endl;
-        return;
-    } else if (allocatedChoice == 1){
-        cout << "\ncode: " << allocatedChoice << " Congratulations you've passed the application and allocated to: " << _choice1 << endl;
-        return;
-    } else if (allocatedChoice == 2){
-        cout << "\ncode: " << allocatedChoice << " Congratulations you've passed the application and allocated to: " << _choice2 << endl;
-    } else {
-        cout << "\nsome error occured, code: " << allocatedChoice << endl;
-    }
+    // if (allocatedChoice == 0){
+    //     cout << "\n We regret to inform you that your application failed, reason being your cgpa doesn't satisfy the minimum required for your choices. code: " << allocatedChoice << endl;
+    //     return;
+    // } else if (allocatedChoice == 1){
+    //     cout << "\ncode: " << allocatedChoice << " Congratulations you've passed the application and allocated to: " << _choice1 << endl;
+    //     return;
+    // } else if (allocatedChoice == 2){
+    //     cout << "\ncode: " << allocatedChoice << " Congratulations you've passed the application and allocated to: " << _choice2 << endl;
+    // } else {
+    //     cout << "\nsome error occured, code: " << allocatedChoice << endl;
+    // }
 }
 
 

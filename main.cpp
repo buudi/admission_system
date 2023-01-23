@@ -6,6 +6,7 @@
 #include "List.h"
 #include "Filter.h"
 #include "Task1.h"
+#include "Task2.h"
 #include "Create_Applicants_List.h"
 #include "ApplicantsList.h"
 
@@ -46,7 +47,7 @@ int main(){
 		    cout << ">> Please select a task by typing a number" << endl;
 		    cout << ">> from 1-5" << endl;
 		
-		    cout << ">> 1. Update student info" << endl;
+		    cout << ">> 1. Update Applicant info" << endl;
 		    cout << ">> 2. Filter student info (GPA)" << endl;
 		    cout << ">> 3. Search student info" << endl;
 		    cout << ">> 4. Display accepted students" << endl;
@@ -60,12 +61,13 @@ int main(){
 		    switch (userChoice) {
 			case 1:
 				cout << " " << endl;
+				// task1 is in "Task1.h" - Update applicant info
                 task1();
 				break;
 				
 			case 2:
 				cout << " " << endl;
-				cout << ">> This is task 2!" << endl;
+				task2();
 				break;
 				
 			case 3:

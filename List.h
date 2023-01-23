@@ -19,6 +19,8 @@ class List{
         Node* returnTail(){return tail;}
         Node* return_node_at(int);
         Node* update_node(string);
+        int node_count();
+        int accepted_applicants_count();
         void deleteHead();
         void deleteTail();
 };

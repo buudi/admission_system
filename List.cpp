@@ -83,6 +83,36 @@ Node* List::update_node(string _fullName){
     return current;
 }
 
+int List::node_count(){
+    int num = 0;
+    if(isEmpty()){
+        return num;
+    } else {
+        Node* current = head;
+        while(current){
+            num++;
+            current = current->next;
+        }
+        return num;
+    }
+}
+
+int List::accepted_applicants_count()
+{
+    int num = 0;
+    if(isEmpty()){
+        return num;
+    } else {
+        Node* current = head;
+        while(current){
+            if(current->accepted)
+                num++;
+            current = current->next;
+        }
+        return num;
+    }
+}
+
 void List::deleteHead(){
     if(isEmpty()){
         cout << "there is nothing to remove \n";
