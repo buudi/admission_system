@@ -24,6 +24,7 @@ class List{
         int node_count();
         int accepted_applicants_count();
         void displayAcceptedStudents();
+        void displayFailedApplications();
         void deleteHead();
         void deleteTail();
 };

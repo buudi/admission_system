@@ -75,15 +75,6 @@ Node* List::update_node(string _fullName){
     Node* current = head;
     while(current->fullName != _fullName)
         current = current->next;
-    // if(current == nullptr){
-    //     cout << "\nNode Not Found (at update_node(string))\n";
-    //     return ;
-    // }
-
-    // } else {
-    //     cout << "\nSome error happened at update_node(string)\n";
-    //     return ;
-    // }
     return current;
 }
 
@@ -139,6 +130,7 @@ void List::displayAcceptedStudents(){
     Node* current = head;
     bool accepted_exist = false;
     int num = 0;
+    cout << "\nThe following Applications passed and are now UTM Students\n";
     while(current){
         if(current->accepted){
             accepted_exist = true;
@@ -153,6 +145,33 @@ void List::displayAcceptedStudents(){
         cout << "There are no Accepted Applications\n";
         return;
     }
+}
+
+void List::displayFailedApplications(){
+    if(isEmpty()){
+    cout << "there are no Applications \n";
+    return;
+    }
+    Node* current = head;
+    bool accepted_exist = false;
+    int num = 0;
+    cout << "\n\nThe following Applications Failed:\n";
+    while(current){
+        if(!current->accepted){
+            accepted_exist = true;
+            cout << ++num << ". Student Name: " << current->fullName << endl;
+            cout << "   Age: " << current->age << endl;
+            cout << "   Course first choice: " << current->choice1 << endl;
+            cout << "   Course second choice: " << current->choice2 << endl;
+
+
+
+        }
+        current = current->next;
+}
+if(accepted_exist == false){
+    return;
+}
 }
 
 

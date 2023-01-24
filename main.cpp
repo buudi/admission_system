@@ -37,6 +37,7 @@ int main(){
 
 	APPLICATIONS_SIZE = applicantsList->node_count();
 
+
     char userInput;
 	int userChoice;
 	string studentName;
@@ -63,8 +64,8 @@ int main(){
 				cout << ">> 1. Update Applicant info" << endl;
 				cout << ">> 2. Undo to latest change in Applicant info" << endl;
 				cout << ">> 3. Filter the Applicants based on thier CGPA " << endl;
-				cout << ">> 4. Search for an applicant student info" << endl;
-				cout << ">> 5. Display accepted students" << endl;
+				cout << ">> 4. Display accepted students" << endl;
+				cout << ">> 5. Search for an applicant student info" << endl;
 				cout << ">> 6. Go back to Home Menu" << endl;
 				cout << ">> 7. Exit Program" << endl;
 
@@ -91,15 +92,17 @@ int main(){
 					break;
 
 				case 4:
-					task4();
-					break;
-					
-				case 5:
 					system("CLS");
 					applicantsList->displayAcceptedStudents();
+					applicantsList->displayFailedApplications();
 					cout << "\n\npress Enter to continue ...";
 					cin.ignore();
 					cin.ignore();
+					break;
+					
+					
+				case 5:
+					task4();
 					break;
 
 				case 6:
