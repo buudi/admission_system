@@ -6,8 +6,8 @@
 #include <cstdlib>
 #include "ApplicantsList.h"
 #include "Filter.h"
+#include "APPLICATIONS_SIZE.h"
 
-#define APPLICATIONS_SIZE 4
 
 void task3(){
     system("CLS");
@@ -15,7 +15,7 @@ void task3(){
     cout <<"This is the filter interface\n";
     cout <<"\n>> Filtering applications based on the minimum requirements\n";
 
-    
+	APPLICATIONS_SIZE = applicantsList->node_count();
     for (int i = 0; i < APPLICATIONS_SIZE; i++)
     {
         filter(course, applicantsList->return_node_at(i));

@@ -1,0 +1,6 @@
+#ifndef APPLICATIONS_SIZE_H
+#define APPLICATIONS_SIZE_H
+
+extern int APPLICATIONS_SIZE;
+
+#endif
