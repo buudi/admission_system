@@ -18,9 +18,12 @@ class List{
         Node* returnHead() { return head; }
         Node* returnTail(){return tail;}
         Node* return_node_at(int);
+        void display_node_where(string);
         Node* update_node(string);
+        Node* search_node(string);
         int node_count();
         int accepted_applicants_count();
+        void displayAcceptedStudents();
         void deleteHead();
         void deleteTail();
 };

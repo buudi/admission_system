@@ -4,11 +4,16 @@
 
 #include "Node.h"
 #include "List.h"
+#include "Stack.h"
 #include "Filter.h"
-#include "Task1.h"
-#include "Task2.h"
+#include "Task1.h" // update applicant info
+#include "Task3.h" // filter applicant info
+#include "Task2.h" // Undo applicant Info
+#include "Task4.h" // search applicant info
+// #include "Task6.h"
 #include "Create_Applicants_List.h"
 #include "ApplicantsList.h"
+#include "Undo_Stack.h"
 
 using namespace std;
 
@@ -16,11 +21,15 @@ using namespace std;
 #define COURSES_SIZE 5
 
 List* applicantsList;
+Stack* Undo_Stack;
 
 int main(){ 
 
     // create the linked list:
     applicantsList = create_applicants_list();
+	// create the Undo Stack
+	Undo_Stack = new Stack();
+	Undo_Stack->createStack();
 
     char userInput;
 	int userChoice;
@@ -31,7 +40,7 @@ int main(){
 	cout << "(SRAD)" << endl;
 	
     while(true){
-        cout << ">> Are you a student (S) or an adminstrator (A) ?" << endl;
+        cout << ">> Are you an applying student (S) or an adminstrator (A) ?" << endl;
         cout << "> ";
         cin >> userInput;
         if(userInput=='A' || userInput=='a')
@@ -48,10 +57,10 @@ int main(){
 		    cout << ">> from 1-5" << endl;
 		
 		    cout << ">> 1. Update Applicant info" << endl;
-		    cout << ">> 2. Filter student info (GPA)" << endl;
-		    cout << ">> 3. Search student info" << endl;
-		    cout << ">> 4. Display accepted students" << endl;
-		    cout << ">> 5. Generate matric number" << endl;
+			cout << ">> 2. Undo to latest change in Applicant info" << endl;
+		    cout << ">> 3. Filter the Applicants based on thier CGPA " << endl;
+		    cout << ">> 4. Search for an applicant student info" << endl;
+		    cout << ">> 5. Display accepted students" << endl;
             cout << ">> 6. Exit program" << endl;
 		    cout << " " << endl;
 		
@@ -72,35 +81,22 @@ int main(){
 				
 			case 3:
 				cout << " " << endl;
-				cout << ">> Enter the student's full name:- " << endl;
-					cout << "> ";
-				cin >> studentName;
-				
-				//code for the task (linked list) should start here.
-				//this is just a filler, it isn't the actual code.
-				cout << " " << endl;
-				cout << "sike, you get nothin >:-]" << endl;
-				//note: try to look for "main menu" references.
-				//for the "yes or no" options.
+				task3();
 				break;
-				
+
 			case 4:
-				//work in progress
-				cout << " " << endl;
-				// cout << ">> There are "; << noStudent << " accepted students." << endl;
-				cout << " " << endl;
-				//there should be a loop here that will display a list of accepted students.
-				
-				//note: try to look for "main menu" references.
-				//for the "yes or no" options.
+				task4();
 				break;
 				
 			case 5:
-				cout << " " << endl;
-				cout << ">> This is task 5!" << endl;
+				system("CLS");
+				applicantsList->displayAcceptedStudents();
+				cout << "\n\npress Enter to continue ...";
+				cin.ignore();
+				cin.ignore();
 				break;
-			
-            case 6:
+
+			case 6:
                 cout << " " << endl;
                 return 0;
 

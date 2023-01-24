@@ -8,6 +8,15 @@
 #include "List.h"
 
 #define COURSES_SIZE 5
+
+string generateMatric(){
+    string part1 = "A23EC0";
+    int part2 = rand() % 1000;
+    string matric = part1 + to_string(part2);
+
+    return matric;
+}
+
 struct Course{
     string courseName;
     float minimum_cgpa;
@@ -40,6 +49,10 @@ void filter(Course course[], Node* applicant){
             {
                 allocatedChoice = 1;
                 applicant->setAccepted();
+                applicant->set_allocated_course(
+                    applicant->choice1
+                );
+                applicant->set_matric(generateMatric());
                 break;
             }
         }
@@ -52,6 +65,10 @@ void filter(Course course[], Node* applicant){
                 {
                     allocatedChoice = 2;
                     applicant->setAccepted();
+                    applicant->set_allocated_course(
+                    applicant->choice2
+                );
+                    applicant->set_matric(generateMatric());
                     break;
                 }
             }     

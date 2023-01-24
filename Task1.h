@@ -10,6 +10,7 @@
 #include "List.h"
 #include "Node.h"
 #include "ApplicantsList.h" 
+#include "Undo_Stack.h"
 
 using namespace std;
 
@@ -74,6 +75,7 @@ void task1(){
                 int new_Age;
                 cin >> new_Age;
 
+                Undo_Stack->push(current);
                 current->setAge(new_Age);
 
                 cout << "\nUpdated Applicant Info: \n";
@@ -90,6 +92,7 @@ void task1(){
                 float new_cgpa;
                 cin >> new_cgpa;
 
+                Undo_Stack->push(current);
                 current->set_cgpa(new_cgpa);
 
                 cout << "\nUpdated Applicant Info: \n";
@@ -119,7 +122,9 @@ void task1(){
                     break;
                 }
 
+                Undo_Stack->push(current);
                 current->set_choice1(courses[user_input_course_choice1 - 1]);
+
 
                 cout << "\nUpdated Applicant Info: \n";
                 printApplicantInfo(current);
@@ -147,6 +152,7 @@ void task1(){
                     break;
                 }
 
+                Undo_Stack->push(current);
                 current->set_choice2(courses[user_input_course_choice2 - 1]);
 
                 cout << "\nUpdated Applicant Info: \n";

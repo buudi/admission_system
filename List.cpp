@@ -67,6 +67,10 @@ Node* List::return_node_at(int position){
     return head;
 }
 
+void List::display_node_where(string _fullname){
+    
+}
+
 Node* List::update_node(string _fullName){
     Node* current = head;
     while(current->fullName != _fullName)
@@ -81,6 +85,20 @@ Node* List::update_node(string _fullName){
     //     return ;
     // }
     return current;
+}
+
+Node* List::search_node(string fullName)
+{
+    Node *current = head;
+    while (current != nullptr)
+    {
+        if (current->fullName == fullName)
+        {
+            return current;
+        }
+        current = current->next;
+    }
+    return nullptr;
 }
 
 int List::node_count(){
@@ -112,6 +130,31 @@ int List::accepted_applicants_count()
         return num;
     }
 }
+
+void List::displayAcceptedStudents(){
+    if(isEmpty()){
+        cout << "there are no Applications \n";
+        return;
+    }
+    Node* current = head;
+    bool accepted_exist = false;
+    int num = 0;
+    while(current){
+        if(current->accepted){
+            accepted_exist = true;
+            cout << ++num << ". Student Name: " << current->fullName << endl;
+            cout << "   Age: " << current->age << endl;
+            cout << "   Allocated Course: " << current->allocatedCourse << endl;
+            cout << "   Matric Number: " << current->matricNo << endl << endl;
+        }
+        current = current->next;
+    }
+    if(accepted_exist == false){
+        cout << "There are no Accepted Applications\n";
+        return;
+    }
+}
+
 
 void List::deleteHead(){
     if(isEmpty()){

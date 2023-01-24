@@ -36,6 +36,14 @@ class Node{
         void set_choice2(string _choice2){
             this->choice2 = _choice2;
         }
+        
+        void set_allocated_course(string _course){
+            this->allocatedCourse = _course;
+        }
+
+        void set_matric(string _matric){
+            this->matricNo = _matric;
+        }
 
         Node(){
             next = nullptr;
