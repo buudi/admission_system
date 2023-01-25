@@ -57,19 +57,5 @@ void Stack::pop(){
     }
 }
 
-// void Stack::displayStack(){
-
-//     StackNode* current = top;
-//     if (isEmpty()){
-//         cout << "Stack is empty \n";
-//         return ;
-//     } else {
-//         while(current != nullptr){
-//             cout << current->data << endl;
-//             current = current->next;
-//         }   
-//     }
-// }
-
 
 #endif

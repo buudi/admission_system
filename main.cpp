@@ -1,21 +1,27 @@
-#include <iostream>
-#include <cstdlib>
-#include <string>
+// UTM STUDENT RECRUITMENT & ADMISSION DIVISION (SRAD)
 
-#include "Node.h"
-#include "List.h"
-#include "Stack.h"
-#include "Filter.h"
+// ABDULLAH YASER ABDO ALI ALNADHARI (A21EC0243)
+// ARSHAD PARVEZ DIPTO (A21EC4007)
+// HANIN MOEMEN MOHAMED ELSAYED ELSAFTAWY (A21EC0260)
+
+#include <iostream> // used for outputting and inputting
+#include <cstdlib> // used system() function ONLY
+#include <string> // used for string operations
+
+#include "Node.h" // Node implementation
+#include "List.h" // Linked List implementation
+#include "Stack.h" // Stack Implementation
+
+#include "Filter.h" // Filter applications based on cgpa and minimum requirements
 #include "Task1.h" // update applicant info
 #include "Task3.h" // filter applicant info
 #include "Task2.h" // Undo applicant Info
 #include "Task4.h" // search applicant info
+#include "Apply_UTM.h" // Apply to UTM
+#include "Create_Applicants_List.h" // a function to create 4 applications as a starter
 
-#include "Apply_UTM.h"
-
-#include "Create_Applicants_List.h"
-#include "ApplicantsList.h"
-#include "Undo_Stack.h"
+#include "ApplicantsList.h" // global variable for the Linked List
+#include "Undo_Stack.h" // global variable for the Stack
 
 using namespace std;
 
